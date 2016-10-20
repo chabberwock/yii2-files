@@ -1,0 +1,42 @@
+{
+    "name": "chabberwock/yii2-files",
+    "description": "Session style file uploader",
+    "keywords": [
+        "2amigos",
+        "yii",
+        "yii2",
+        "yii 2",
+        "widget",
+        "upload"
+    ],
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "homepage": "https://github.com/chabberwock/yii2-files",
+    "authors": [
+        {
+            "name": "Alexandr Makarov",
+            "email": "contact@originsoft.org",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "2amigos/yii2-file-upload-widget": "~1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "chabberwock\\files\\": "src"
+        }
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        },
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
