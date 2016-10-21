@@ -1,34 +1,47 @@
 <?php
 namespace chabberwock\files;
 
-use dosamigos\fileupload\FileUploadUI;
+use dosamigos\fileupload\FileUpload as BaseWidget;
+use yii\helpers\Html;
+use Yii;
 
-class FileUpload extends FileUploadUI
+class FileUpload extends BaseWidget
 {
     public $sessionId;
-    public $sessionConfig = array();
-    
-    
-    public $formView = '@dosamigos/fileupload/views/form';
-    public $uploadTemplateView = '@dosamigos/fileupload/views/upload';
-    public $downloadTemplateView = '@dosamigos/fileupload/views/download';
-    public $galleryTemplateView = '@dosamigos/fileupload/views/gallery';
-    
-
+    public $viewUploadButton = '@chabberwock/files/views/uploadButton';
+    public $meta = array();
     
     public function init()
     {
         if (!isset($this->sessionId)) {
-            $session = Module::getInstance()->createSession($this->sessionConfig);
+            $session = Module::getInstance()->createSession($this->meta);
             $this->sessionId = $session->id;
         }
-        $this->model->{$this->attribute} = $this->sessionId;
+        if ($this->model instanceof \yii\base\Model) {
+            $this->model->{$this->attribute} = $this->sessionId;    
+        }
         $this->url = ['/' . Module::getInstance()->uniqueId . '/upload/index', 'sessionId'=>$this->sessionId];
+        $this->name = 'file';
+        $this->options['name'] = 'file';
         parent::init();
         $this->clientOptions['autoUpload'] = true;
-        $this->fieldOptions['name'] = 'file';
+        //$this->useDefaultButton = false;
         
     }
+    
+    public function run()
+    {
+        $input = $this->hasModel()
+            ? Html::activeFileInput($this->model, $this->attribute, $this->options)
+            : Html::fileInput($this->name, $this->value, $this->options);
+
+        echo $this->useDefaultButton
+            ? $this->render($this->viewUploadButton, ['input' => $input])
+            : $input;
+
+        $this->registerClientScript();
+    }
+    
     
 }  
 

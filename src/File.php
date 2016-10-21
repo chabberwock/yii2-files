@@ -16,8 +16,13 @@ class File extends \yii\base\Model
     {
         return [
             [['id','name','type'], 'required'],
-            [['data','size'], 'safe']
+            [['data','size','url','path'], 'safe']
         ];
+    }
+    
+    public function getExt()
+    {
+        return end(explode('.', $this->name));
     }
     
 }  
