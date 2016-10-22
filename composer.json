@@ -26,9 +26,6 @@
     "require": {
         "2amigos/yii2-file-upload-widget": "~1.0"
     },
-    "require-dev": {
-        "phpunit/phpunit": "~4.0"
-    },
     "autoload": {
         "psr-4": {
             "chabberwock\\files\\": "src"
@@ -39,8 +36,5 @@
             "npm-asset-library": "vendor/npm",
             "bower-asset-library": "vendor/bower"
         },
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        }
     }
 }
