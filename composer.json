@@ -1,13 +1,12 @@
 {
     "name": "chabberwock/yii2-files",
-    "description": "Session style file uploader",
+    "description": "Module to handle file uploads",
     "keywords": [
-        "2amigos",
         "yii",
         "yii2",
         "yii 2",
-        "widget",
-        "upload"
+        "upload",
+        "files"
     ],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
@@ -15,8 +14,13 @@
     "authors": [
         {
             "name": "Alexandr Makarov",
-            "email": "contact@originsoft.org",
+            "email": "notengine@gmail.com",
             "role": "Developer"
+        },
+        {
+            "name": "Originsoft",
+            "email": "contact@originsoft.org",
+            "role": "Company"
         }
     ],
     "require": {
