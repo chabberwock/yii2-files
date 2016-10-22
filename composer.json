@@ -1,6 +1,6 @@
 {
     "name": "chabberwock/yii2-files",
-    "description": "Module to handle file uploads",
+    "description": "Module to handle async file uploads",
     "keywords": [
         "yii",
         "yii2",
