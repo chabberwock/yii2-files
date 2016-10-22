@@ -6,18 +6,7 @@ later. Based on 2amigos/yii2-file-upload-widget
 
 ## Installation
 
-Since plugin is not yet available in packagist, you should add custom vcs repository 
-to your composer.json:
-```
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/chabberwock/yii2-files"
-        }
-    ],
-```
-
-Then add "chabberwock/yii2-files": "dev-master" to "require" section
+Add "chabberwock/yii2-files": "*" to "require" section of your composer.json
 
 Once module is installed, add it to modules section of config
 
