@@ -22,7 +22,8 @@ class File extends \yii\base\Model
     
     public function getExt()
     {
-        return end(explode('.', $this->name));
+        $parts = explode('.', $this->name);
+        return end($parts);
     }
     
 }  
